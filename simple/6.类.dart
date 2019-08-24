@@ -12,7 +12,7 @@ main() {
     ..name = "老李"
     ..age = 48
     ..toPrint(); //级联操作
-  Animal life = APerson();
+  Animal life = APerson.instance("命名构造。。。");
   life.eat();
 }
 
@@ -69,7 +69,7 @@ abstract class Life {
 class APerson extends Person with Animal {
   APerson() {}
 
-  APerson.instance(String alias) : super() {
+  APerson.instance(String alias) : super.instance(alias) {
     print("APerson" + alias);
   }
 
